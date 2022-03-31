@@ -1,0 +1,87 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  --app-bg: #1E2D3B;
+  --app-bg-light: #2E3A46;
+  --app-text: #727F7C;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 10px 20px;
+    background-color: #2E3A46;
+}
+
+.logo {
+    width: 80px;
+}
+
+img {
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.main-content {
+    background-color: var(--app-bg);
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+section {
+    width: 100%;
+}
+
+.album-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+}
+
+.album-card {
+    background-color: var(--app-bg-light);
+    width: 18%;
+    padding: 20px 20px 10px;
+  }
+  
+  .album__info {
+    text-align: center;  
+  }
+
+  .album__cover {
+    width: 100%;
+    aspect-ratio: 1/1;
+    margin-bottom: 20px;
+  }
+
+  .album__title {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .album__author {
+      color: var(--app-text);
+  }
+
+  .album__year {
+      color: var(--app-text);
+  }
