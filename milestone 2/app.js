@@ -1,7 +1,10 @@
 const app = new Vue ({ 
     el: '#app',
     data: {
-        discs: []
+        discs: [],
+        discsFiltered: [],
+        genreList: [],
+        genreFilter: '',
     },
 
     methods: {
@@ -9,11 +12,32 @@ const app = new Vue ({
             axios.get('db.php')
             .then(res => {
                 this.discs = res.data
-                console.log(res.data)
+                this.getGenre(this.discs)
             })
-        }
+        },
+        fetchGenre: function() {
+            axios.get('db.php',{
+                params: {
+                    id: 1,
+                }
+            })
+            .then(res => {
+                this.discsFiltered = res.data
+            })
+        },
+        getGenre: function (discs) { 
+            discs.forEach((el) => {
+                const genere = el.genre;
+                if (!this.genreList.includes(genere)) {
+                    this.genreList.push(genere);
+                }
+            });
+        },
     },
     created() {
         this.fetchDiscs()
-    }
+        this.fetchGenre()
+    },
+    
+    
  })

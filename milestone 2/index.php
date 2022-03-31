@@ -1,7 +1,5 @@
 <?php 
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -27,14 +25,19 @@
 
         <main>
             <section class="main-content">
-                <!-- <AlbumSelect 
-                @cercaGenere="setGenreToFIlter" 
-                @cercaArtista="setArtistToFilter"
-                :genreList="genreList" :artistList="artistList"/> -->
+              <div class="container filter-select">
+                <label for="select-genre">Generi Musicali:</label>
+                <select  name="genre" id="select-genre" v-model="genreFilter">
+                  <option value="">Tutti</option>
+                  <option v-for="genre in genreList">
+                    {{ genre }}
+                  </option>
+                </select>
+              </div>
 
                 <div class="container album-wrapper">
 
-                        <div v-for="disc in discs" class="album-card card">
+                        <div v-for="disc in discsFiltered" class="album-card card">
                             <figure class="album__cover">
                                 <img :src="disc.poster" alt="" />
                             </figure>
