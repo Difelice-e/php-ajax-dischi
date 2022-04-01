@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+  }
+
 :root {
   --app-bg: #1E2D3B;
   --app-bg-light: #2E3A46;
@@ -40,6 +47,7 @@ img {
     height: calc(100vh - 100px);
     display: flex;
     justify-content: center;
+    flex-direction: column;
     padding-top: 50px;
 }
 
@@ -71,6 +79,11 @@ section {
     margin-bottom: 20px;
   }
 
+  .album__cover img {
+    object-fit: cover;
+    object-position: center;
+  }
+
   .album__title {
     text-transform: uppercase;
     color: white;
@@ -85,3 +98,20 @@ section {
   .album__year {
       color: var(--app-text);
   }
+
+  .filter-select {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  label {
+    color: white;
+    margin-right: 5px;
+}
+
+select {
+    width: 150px;
+    background-color: transparent;
+    color: var(--app-text);
+    margin-right: 20px;
+}

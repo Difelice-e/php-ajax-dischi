@@ -15,16 +15,16 @@ const app = new Vue ({
                 this.getGenre(this.discs)
             })
         },
-        fetchGenre: function() {
-            axios.get('db.php',{
-                params: {
-                    id: 1,
-                }
-            })
-            .then(res => {
-                this.discsFiltered = res.data
-            })
-        },
+        // fetchGenre: function() {
+        //     axios.get('server.php',{
+        //         params: {
+        //             genre: genreFilter,
+        //         }
+        //     })
+        //     .then(res => {
+        //         this.discsFiltered = res.data
+        //     })
+        // },
         getGenre: function (discs) { 
             discs.forEach((el) => {
                 const genere = el.genre;
@@ -36,7 +36,6 @@ const app = new Vue ({
     },
     created() {
         this.fetchDiscs()
-        this.fetchGenre()
     },
     
     

@@ -37,7 +37,7 @@
 
                 <div class="container album-wrapper">
 
-                        <div v-for="disc in discsFiltered" class="album-card card">
+                        <div v-for="disc in discs" class="album-card card">
                             <figure class="album__cover">
                                 <img :src="disc.poster" alt="" />
                             </figure>
