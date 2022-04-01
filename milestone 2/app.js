@@ -4,12 +4,21 @@ const app = new Vue ({
         discs: [],
         discsFiltered: [],
         genreList: [],
-        genreFilter: '',
+        genre: '',
     },
-
+    watch: {
+        genre: function(newVal, oldVal) {
+            console.log(newVal, oldVal);
+            this.fetchDiscs()
+        }
+    },
     methods: {
         fetchDiscs: function() {
-            axios.get('db.php')
+            axios.get('db.php',{
+                params: {
+                    genre: this.genre
+                }
+            })
             .then(res => {
                 this.discs = res.data
                 this.getGenre(this.discs)

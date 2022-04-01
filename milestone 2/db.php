@@ -72,24 +72,12 @@
         ]
       ];
 
-      // $genre = isset($_GET['genre']) ? $_GET['genre'] : null;
-    
-    //   if (isset($_GET['genre'])) {
 
-    //     foreach ($discs as $value) {
-    //         if ($value['genre'] == $genre) {
-    //             $data[] = $value
-    //         }
-    //     }
-    //   } else {
-    //       $data[] = $discs
-    //   }
-
-    // if($genre) {
-    //     foreach ($discs as $value) {
-            
-    //     }
-    // }
+      if (isset($_GET['genre']) && $_GET['genre'] != '') {
+        $discs = array_filter($discs, function($el) {
+          return $el['genre'] === $_GET['genre'];
+        });
+      }
 
       header('content-type: application/json');
 

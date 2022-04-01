@@ -27,7 +27,7 @@
             <section class="main-content">
               <div class="container filter-select">
                 <label for="select-genre">Generi Musicali:</label>
-                <select  name="genre" id="select-genre" v-model="genreFilter">
+                <select  name="genre" id="select-genre" v-model="genre">
                   <option value="">Tutti</option>
                   <option v-for="genre in genreList">
                     {{ genre }}
